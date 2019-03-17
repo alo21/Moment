@@ -56,6 +56,7 @@
 		D35366F4223F10550062736A /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				D3E0B851223F11C300F17031 /* Codable */,
 				D35366F5223F10550062736A /* AppDelegate.swift */,
 				D35366F7223F10550062736A /* ViewController.swift */,
 				D35366F9223F10550062736A /* Main.storyboard */,
@@ -65,6 +66,13 @@
 				D35366FC223F10550062736A /* Moment.xcdatamodeld */,
 			);
 			path = Moment;
+			sourceTree = "<group>";
+		};
+		D3E0B851223F11C300F17031 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Codable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
