@@ -13,6 +13,11 @@
 		D35366FE223F10550062736A /* Moment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D35366FC223F10550062736A /* Moment.xcdatamodeld */; };
 		D3536700223F105A0062736A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D35366FF223F105A0062736A /* Assets.xcassets */; };
 		D3536703223F105A0062736A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3536701223F105A0062736A /* LaunchScreen.storyboard */; };
+		D378EE02223F12E60002DF86 /* RadioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE01223F12E60002DF86 /* RadioResponse.swift */; };
+		D378EE05223F13150002DF86 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE04223F13150002DF86 /* Radio.swift */; };
+		D378EE07223F14450002DF86 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE06223F14450002DF86 /* Headers.swift */; };
+		D378EE09223F14950002DF86 /* PlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE08223F14950002DF86 /* PlaylistResponse.swift */; };
+		D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D35366FF223F105A0062736A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3536702223F105A0062736A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3536704223F105A0062736A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D378EE01223F12E60002DF86 /* RadioResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioResponse.swift; sourceTree = "<group>"; };
+		D378EE04223F13150002DF86 /* Radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
+		D378EE06223F14450002DF86 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
+		D378EE08223F14950002DF86 /* PlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistResponse.swift; sourceTree = "<group>"; };
+		D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,8 @@
 		D35366F4223F10550062736A /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				D378EE0A223F18CA0002DF86 /* Controller */,
+				D378EE03223F12FE0002DF86 /* NetworkRequest */,
 				D3E0B851223F11C300F17031 /* Codable */,
 				D35366F5223F10550062736A /* AppDelegate.swift */,
 				D35366F7223F10550062736A /* ViewController.swift */,
@@ -68,9 +80,28 @@
 			path = Moment;
 			sourceTree = "<group>";
 		};
+		D378EE03223F12FE0002DF86 /* NetworkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D378EE04223F13150002DF86 /* Radio.swift */,
+			);
+			path = NetworkRequest;
+			sourceTree = "<group>";
+		};
+		D378EE0A223F18CA0002DF86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D3E0B851223F11C300F17031 /* Codable */ = {
 			isa = PBXGroup;
 			children = (
+				D378EE01223F12E60002DF86 /* RadioResponse.swift */,
+				D378EE06223F14450002DF86 /* Headers.swift */,
+				D378EE08223F14950002DF86 /* PlaylistResponse.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -146,7 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D378EE05223F13150002DF86 /* Radio.swift in Sources */,
 				D35366F8223F10550062736A /* ViewController.swift in Sources */,
+				D378EE07223F14450002DF86 /* Headers.swift in Sources */,
+				D378EE09223F14950002DF86 /* PlaylistResponse.swift in Sources */,
+				D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */,
+				D378EE02223F12E60002DF86 /* RadioResponse.swift in Sources */,
 				D35366FE223F10550062736A /* Moment.xcdatamodeld in Sources */,
 				D35366F6223F10550062736A /* AppDelegate.swift in Sources */,
 			);
