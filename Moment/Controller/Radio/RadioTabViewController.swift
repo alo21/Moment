@@ -8,14 +8,7 @@
 
 import UIKit
 
-class RadioTabViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        Radio().getRadiosList()
-    }
-    
+class RadioTabViewController: UINavigationController {
 
     
 }

@@ -19,7 +19,7 @@ struct playlistResponse: Codable {
 struct playlist: Codable{
     let id: String
     let name: String
-    let creationdate: Date
+    let creationdate: String
     let user_id: String
     let user_name: String
     let zip: String

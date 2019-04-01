@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class Radio{
+class RadioNetwork{
     
     let baseAPIUrl = "https://api.jamendo.com/v3.0"
     let radio = "/radios"
@@ -21,9 +21,9 @@ class Radio{
     
     //let finalURL = baseAPIUrl + radio + clientIDUrl + clientID + format + limit
     
-    func getRadiosList() -> Void {
+    func getRadiosList(completionHandler: @escaping()->Void) -> Void {
         
-        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/radios/?client_id=7a746963&format=jsonpretty&limit=3")!)
+        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/radios/?client_id=7a746963&format=jsonpretty&limit=25")!)
         let session = URLSession.shared
         
 
@@ -32,8 +32,7 @@ class Radio{
             if error != nil { // Handle error...
                 
                 //errorHandler(error!)
-                print("#############à")
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "Unknow error")
                 
                 return
             }
@@ -50,30 +49,23 @@ class Radio{
                 let radioList = try JSONDecoder().decode(radioResponse.self, from: data)
                 //self.radioArray = radioList.results.map({$0})
                 
-                print(radioList)
+                //print(radioList)
+                
+                if RadioData().getRadios().count == 0 {
+                
+                    radioList.results.forEach{ station in
+                    
+                    
+                        RadioData().addRadio(radio: station)
+                    }
+                    
+                }
                 
                 DispatchQueue.main.async {
                     
-                    let object = UIApplication.shared.delegate
-                    let appDelegate = object as! AppDelegate
-                    //var studentsArray: [StudentInformation] = []
-                    
-                    //Loop thrhough to save in shared
-//                    for student in self.StudentsArray {
-//
-//                        if(student.latitude != nil || student.longitude != nil){
-//
-//                            appDelegate.Students.append(student)
-//                            studentsArray.append(student)
-//
-//                        }
-//                    }
-                    
-//                    StudentsInformationClass().saveStudentsInformationArray(studentsArray: studentsArray)
                     print("Done getting data")
                     
-//                    completionHandler()
-                    return
+                    completionHandler()
                     
                 }
                 
