@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Radio-->
         <scene sceneID="Yut-KP-LUt">
             <objects>
                 <tableViewController id="EYk-r3-Q0e" customClass="RadioTableViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,11 +45,11 @@
                             <outlet property="delegate" destination="EYk-r3-Q0e" id="rEM-ZN-48p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rZR-lE-n7B"/>
+                    <navigationItem key="navigationItem" title="Radio" id="rZR-lE-n7B"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9Z-Sk-Z5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117.5999999999999" y="-458.32083958020991"/>
+            <point key="canvasLocation" x="1750" y="-492"/>
         </scene>
         <!--Radio-->
         <scene sceneID="33s-qg-IP7">
@@ -66,9 +66,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cz7-Z2-JlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="-491"/>
+            <point key="canvasLocation" x="441" y="-493"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Playlist-->
         <scene sceneID="Igx-7Y-xWC">
             <objects>
                 <tableViewController id="mCT-55-vBP" customClass="PlaylistTableViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,11 +91,51 @@
                             <outlet property="delegate" destination="mCT-55-vBP" id="jwz-2v-0bW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="PNq-3Z-Kzz"/>
+                    <navigationItem key="navigationItem" title="Playlist" id="PNq-3Z-Kzz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qe-5b-ml7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392.8" y="619.34032983508246"/>
+            <point key="canvasLocation" x="1750" y="644"/>
+        </scene>
+        <!--Playlist Tracks Table View Controller-->
+        <scene sceneID="vnx-4T-lCi">
+            <objects>
+                <tableViewController storyboardIdentifier="PlaylistTracksTableViewController" id="MCp-zT-eb9" customClass="PlaylistTracksTableViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TXp-gZ-qL7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PlaylistTrackCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistTrackCell" rowHeight="67" id="yRg-zo-18H" customClass="PlaylistTracksTableViewCell" customModule="Moment" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yRg-zo-18H" id="f3T-Yk-4Gj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6n-KL-hNp">
+                                            <rect key="frame" x="166" y="23" width="0.0" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myLabel" destination="w6n-KL-hNp" id="dD5-qK-IM8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MCp-zT-eb9" id="5Gn-Kg-Y8H"/>
+                            <outlet property="delegate" destination="MCp-zT-eb9" id="MU9-a8-Syo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZs-Z4-lp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2884" y="644"/>
         </scene>
         <!--Playlist-->
         <scene sceneID="o4o-0X-NW6">
@@ -112,7 +152,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZh-Zg-FxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="620"/>
+            <point key="canvasLocation" x="441" y="644"/>
         </scene>
         <!--Item-->
         <scene sceneID="pUj-XZ-7xN">
@@ -128,35 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxA-bm-N5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="1873"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="M1o-Hd-ABO">
-            <objects>
-                <tableViewController id="OTd-f0-Ahe" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RPX-yi-WY2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kx8-bt-UZr">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kx8-bt-UZr" id="KfY-pv-zjm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="OTd-f0-Ahe" id="7aB-Hv-483"/>
-                            <outlet property="delegate" destination="OTd-f0-Ahe" id="5Xs-4F-HRh"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="imN-KV-yeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2572" y="-1045"/>
+            <point key="canvasLocation" x="441" y="1859"/>
         </scene>
         <!--General View Controller-->
         <scene sceneID="1Fb-RQ-bsW">

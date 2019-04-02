@@ -11,6 +11,11 @@
 		D319E8AF2252B392009DF7A9 /* PlaylistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8AE2252B392009DF7A9 /* PlaylistData.swift */; };
 		D319E8B32252B7F1009DF7A9 /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8B22252B7F1009DF7A9 /* PlaylistTableViewController.swift */; };
 		D319E8B52252B89D009DF7A9 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8B42252B89D009DF7A9 /* PlaylistTableViewCell.swift */; };
+		D319E8B722540866009DF7A9 /* PlaylistTracksNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8B622540866009DF7A9 /* PlaylistTracksNetwork.swift */; };
+		D319E8B922540959009DF7A9 /* PlaylistTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8B822540959009DF7A9 /* PlaylistTracksResponse.swift */; };
+		D319E8BB22540BB9009DF7A9 /* PlaylistTracksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8BA22540BB9009DF7A9 /* PlaylistTracksData.swift */; };
+		D319E8BF22540E43009DF7A9 /* PlaylistTracksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8BE22540E43009DF7A9 /* PlaylistTracksTableViewController.swift */; };
+		D319E8C122540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8C022540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift */; };
 		D35366F6223F10550062736A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35366F5223F10550062736A /* AppDelegate.swift */; };
 		D35366F8223F10550062736A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35366F7223F10550062736A /* ViewController.swift */; };
 		D35366FB223F10550062736A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35366F9223F10550062736A /* Main.storyboard */; };
@@ -34,6 +39,11 @@
 		D319E8AE2252B392009DF7A9 /* PlaylistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistData.swift; sourceTree = "<group>"; };
 		D319E8B22252B7F1009DF7A9 /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
 		D319E8B42252B89D009DF7A9 /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		D319E8B622540866009DF7A9 /* PlaylistTracksNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksNetwork.swift; sourceTree = "<group>"; };
+		D319E8B822540959009DF7A9 /* PlaylistTracksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksResponse.swift; sourceTree = "<group>"; };
+		D319E8BA22540BB9009DF7A9 /* PlaylistTracksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksData.swift; sourceTree = "<group>"; };
+		D319E8BE22540E43009DF7A9 /* PlaylistTracksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksTableViewController.swift; sourceTree = "<group>"; };
+		D319E8C022540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksTableViewCell.swift; sourceTree = "<group>"; };
 		D35366F2223F10550062736A /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35366F5223F10550062736A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D35366F7223F10550062736A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +90,8 @@
 			children = (
 				D319E8B22252B7F1009DF7A9 /* PlaylistTableViewController.swift */,
 				D319E8B42252B89D009DF7A9 /* PlaylistTableViewCell.swift */,
+				D319E8BE22540E43009DF7A9 /* PlaylistTracksTableViewController.swift */,
+				D319E8C022540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift */,
 			);
 			path = Playlist;
 			sourceTree = "<group>";
@@ -124,6 +136,7 @@
 				D378EE04223F13150002DF86 /* RadioNetwork.swift */,
 				D38E9F3222518555005682FD /* ImageNetwork.swift */,
 				D319E8AC2252B286009DF7A9 /* PlaylistNetwork.swift */,
+				D319E8B622540866009DF7A9 /* PlaylistTracksNetwork.swift */,
 			);
 			path = NetworkRequest;
 			sourceTree = "<group>";
@@ -143,6 +156,7 @@
 			children = (
 				D38E9F2A225164DD005682FD /* RadioData.swift */,
 				D319E8AE2252B392009DF7A9 /* PlaylistData.swift */,
+				D319E8BA22540BB9009DF7A9 /* PlaylistTracksData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -153,6 +167,7 @@
 				D378EE01223F12E60002DF86 /* RadioResponse.swift */,
 				D378EE06223F14450002DF86 /* Headers.swift */,
 				D378EE08223F14950002DF86 /* PlaylistResponse.swift */,
+				D319E8B822540959009DF7A9 /* PlaylistTracksResponse.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -233,6 +248,8 @@
 				D38E9F3322518555005682FD /* ImageNetwork.swift in Sources */,
 				D38E9F2F22516A17005682FD /* RadioTableViewController.swift in Sources */,
 				D319E8AD2252B286009DF7A9 /* PlaylistNetwork.swift in Sources */,
+				D319E8C122540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift in Sources */,
+				D319E8BF22540E43009DF7A9 /* PlaylistTracksTableViewController.swift in Sources */,
 				D38E9F3122517267005682FD /* GeneralViewController.swift in Sources */,
 				D378EE07223F14450002DF86 /* Headers.swift in Sources */,
 				D319E8B52252B89D009DF7A9 /* PlaylistTableViewCell.swift in Sources */,
@@ -242,9 +259,12 @@
 				D319E8AF2252B392009DF7A9 /* PlaylistData.swift in Sources */,
 				D38E9F2B225164DD005682FD /* RadioData.swift in Sources */,
 				D378EE02223F12E60002DF86 /* RadioResponse.swift in Sources */,
+				D319E8B922540959009DF7A9 /* PlaylistTracksResponse.swift in Sources */,
+				D319E8B722540866009DF7A9 /* PlaylistTracksNetwork.swift in Sources */,
 				D35366FE223F10550062736A /* Moment.xcdatamodeld in Sources */,
 				D35366F6223F10550062736A /* AppDelegate.swift in Sources */,
 				D319E8B32252B7F1009DF7A9 /* PlaylistTableViewController.swift in Sources */,
+				D319E8BB22540BB9009DF7A9 /* PlaylistTracksData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

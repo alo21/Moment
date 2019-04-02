@@ -23,9 +23,5 @@ class PlaylistData{
         playlistDataGlobal.append(playlist)
         print("Added playlist")
     }
-    
-    
-    
-    
-    
+
 }
