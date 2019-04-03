@@ -11,8 +11,10 @@ import AVFoundation
 
 class PlaylistTracksTableViewController: UITableViewController {
     
-    var playlist: playlist!
     var AudioPlayer = AVAudioPlayer()
+
+    
+    var playlist: playlist!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,16 +54,31 @@ class PlaylistTracksTableViewController: UITableViewController {
         
         let track = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
         
-        do{
-            AudioPlayer = try AVAudioPlayer(contentsOf: URL(string: track.audio)!)
-            
+        PlaylistTracksNetwork().downloadTrack(trackUrl: track.audio, completionHandler: playTrack)
+
+        }
+    
+    
+    func playTrack(filePath: URL){
+        
+        print(filePath)
+        
+        do {
+            AudioPlayer = try AVAudioPlayer(contentsOf: filePath)
             AudioPlayer.play()
+            
         } catch {
-            print(URL(string: track.audio)!)
             print("Something went wrong")
         }
         
+        
+    }
+    
+    
+
+    
     
     }
+    
+    
 
-}

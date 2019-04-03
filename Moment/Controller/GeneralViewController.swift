@@ -25,11 +25,11 @@ class GeneralViewController: UITabBarController {
         
         if item == (self.tabBar.items as! [UITabBarItem])[0] {
             
-            print("Playlist Tab selectd")
+            print("First Tab selectd")
             
-        } else if item == (self.tabBar.items as! [UITabBarItem])[2] {
+        } else if item == (self.tabBar.items as! [UITabBarItem])[1] {
             
-            print("Radio Tab selected")
+            print("Second Tab selected")
             
             
         }

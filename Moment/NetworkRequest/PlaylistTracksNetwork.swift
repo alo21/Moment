@@ -55,9 +55,7 @@ class PlaylistTracksNetwork{
                     completionHandler()
                     
                 }
-                
-                
-                
+    
                 
             } catch {
                 let myError = error as NSError
@@ -71,11 +69,52 @@ class PlaylistTracksNetwork{
         
         return
         
-        
-        
-        
     }
     
     
     
+    func downloadTrack(trackUrl: String, completionHandler: @escaping(_ filePath: URL)->Void){
+        
+        // Create destination URL
+        let documentsUrl:URL =  (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL?)!
+        
+        let destinationFileUrl = documentsUrl.appendingPathComponent("downloadedFile.mp3")
+        
+        //Deleting the file in case it exists
+        do {
+        try FileManager.default.removeItem(atPath: destinationFileUrl.path)
+        } catch {
+            print("No previous file downloaded")
+        }
+        
+        
+        let request = URLRequest(url: URL(string: trackUrl)!)
+        let session = URLSession.shared
+        
+        let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
+            if let tempLocalUrl = tempLocalUrl, error == nil {
+                // Success
+                if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+                    print("Successfully downloaded. Status code: \(statusCode)")
+                }
+                
+                do {
+                    try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrl)
+                    completionHandler(destinationFileUrl)
+                } catch (let writeError) {
+                    print("Error creating a file \(destinationFileUrl) : \(writeError)")
+                }
+                
+            } else {
+                print(error!.localizedDescription);
+            }
+        }
+        task.resume()
+        
+    }
+    
 }
+    
+    
+    
+
