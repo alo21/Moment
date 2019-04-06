@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GeneralViewController: UITabBarController {
     
     
-    
+    var AudioPlayer = AVAudioPlayer()
     @IBOutlet var myTabBar: UITabBar!
     
     

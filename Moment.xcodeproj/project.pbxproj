@@ -27,6 +27,7 @@
 		D378EE07223F14450002DF86 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE06223F14450002DF86 /* Headers.swift */; };
 		D378EE09223F14950002DF86 /* PlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE08223F14950002DF86 /* PlaylistResponse.swift */; };
 		D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */; };
+		D3892EF022594F1400FE6128 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3892EEF22594F1400FE6128 /* MediaPlayerViewController.swift */; };
 		D38E9F2B225164DD005682FD /* RadioData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F2A225164DD005682FD /* RadioData.swift */; };
 		D38E9F2D2251682E005682FD /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F2C2251682E005682FD /* RadioTableViewCell.swift */; };
 		D38E9F2F22516A17005682FD /* RadioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F2E22516A17005682FD /* RadioTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		D378EE06223F14450002DF86 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		D378EE08223F14950002DF86 /* PlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistResponse.swift; sourceTree = "<group>"; };
 		D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTabViewController.swift; sourceTree = "<group>"; };
+		D3892EEF22594F1400FE6128 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		D38E9F2A225164DD005682FD /* RadioData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioData.swift; sourceTree = "<group>"; };
 		D38E9F2C2251682E005682FD /* RadioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
 		D38E9F2E22516A17005682FD /* RadioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTableViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				D319E8B12252B4B5009DF7A9 /* Playlist */,
 				D319E8B02252B4A2009DF7A9 /* Radio */,
 				D38E9F3022517267005682FD /* GeneralViewController.swift */,
+				D3892EEF22594F1400FE6128 /* MediaPlayerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,11 @@
 				TargetAttributes = {
 					D35366F1223F10550062736A = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -258,6 +266,7 @@
 				D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */,
 				D319E8AF2252B392009DF7A9 /* PlaylistData.swift in Sources */,
 				D38E9F2B225164DD005682FD /* RadioData.swift in Sources */,
+				D3892EF022594F1400FE6128 /* MediaPlayerViewController.swift in Sources */,
 				D378EE02223F12E60002DF86 /* RadioResponse.swift in Sources */,
 				D319E8B922540959009DF7A9 /* PlaylistTracksResponse.swift in Sources */,
 				D319E8B722540866009DF7A9 /* PlaylistTracksNetwork.swift in Sources */,
