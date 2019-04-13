@@ -12,6 +12,7 @@ class RadioTableViewCell: UITableViewCell {
     
     
     
+    @IBOutlet var myImage: UIImageView!
     @IBOutlet var myLabel: UILabel!
     
 

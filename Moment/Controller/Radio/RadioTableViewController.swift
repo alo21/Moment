@@ -50,9 +50,8 @@ class RadioTableViewController: UITableViewController {
         let radio = RadioData().getRadios()[(indexPath as NSIndexPath).row]
         
         cell.textLabel?.text = radio.dispname
-        
-        //cell.imageView?.image = meme.finalImage
-        
+        cell.imageView?.image = UIImage(named: "placeholder")
+                
         return cell
     }
     

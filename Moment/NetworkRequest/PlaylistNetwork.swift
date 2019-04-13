@@ -20,7 +20,7 @@ class PlaylistNetwork{
     
     func getPlaylist(completionHandler: @escaping()->Void) -> Void{
         
-        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/playlists/?client_id=7a746963&format=jsonpretty&namesearch=cool&limit=5")!)
+        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/playlists/?client_id=7a746963&format=jsonpretty&limit=20")!)
         let session = URLSession.shared
         
     

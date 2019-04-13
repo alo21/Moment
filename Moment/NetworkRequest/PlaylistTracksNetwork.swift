@@ -73,7 +73,7 @@ class PlaylistTracksNetwork{
     
     
     
-    func downloadTrack(trackUrl: String, completionHandler: @escaping(_ filePath: URL)->Void){
+    func downloadTrack(trackUrl: String, completionHandler: @escaping(URL?)->Void){
         
         // Create destination URL
         let documentsUrl:URL =  (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL?)!
