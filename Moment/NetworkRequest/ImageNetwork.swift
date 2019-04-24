@@ -32,8 +32,9 @@ func downloadImage(url: String) {
         
         do {
             
+            print(data)
             print("Obtained image")
-                //completionHandler()
+            //completionHandler()
             return
                 
             }
@@ -42,10 +43,7 @@ func downloadImage(url: String) {
     }
     task.resume()
     
-    //return image
-    
-
-
+    return
     
 }
 

@@ -16,6 +16,8 @@
 		D319E8BB22540BB9009DF7A9 /* PlaylistTracksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8BA22540BB9009DF7A9 /* PlaylistTracksData.swift */; };
 		D319E8BF22540E43009DF7A9 /* PlaylistTracksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8BE22540E43009DF7A9 /* PlaylistTracksTableViewController.swift */; };
 		D319E8C122540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319E8C022540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift */; };
+		D343CB7F227056CB0049C30A /* ThemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343CB7E227056CB0049C30A /* ThemeCollectionViewController.swift */; };
+		D343CB81227056F50049C30A /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343CB80227056F50049C30A /* ThemeCollectionViewCell.swift */; };
 		D35366F6223F10550062736A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35366F5223F10550062736A /* AppDelegate.swift */; };
 		D35366F8223F10550062736A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35366F7223F10550062736A /* ViewController.swift */; };
 		D35366FB223F10550062736A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35366F9223F10550062736A /* Main.storyboard */; };
@@ -27,6 +29,10 @@
 		D378EE07223F14450002DF86 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE06223F14450002DF86 /* Headers.swift */; };
 		D378EE09223F14950002DF86 /* PlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE08223F14950002DF86 /* PlaylistResponse.swift */; };
 		D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */; };
+		D37E6EDE226379490029A298 /* Moment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EDC226379490029A298 /* Moment.xcdatamodeld */; };
+		D37E6EE0226384860029A298 /* RadioStreamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EDF226384860029A298 /* RadioStreamResponse.swift */; };
+		D37E6EE22263C5050029A298 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EE12263C5050029A298 /* Player.swift */; };
+		D37E6EE42263D7700029A298 /* ThemeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EE32263D7700029A298 /* ThemeNetwork.swift */; };
 		D3892EF022594F1400FE6128 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3892EEF22594F1400FE6128 /* MediaPlayerViewController.swift */; };
 		D38E9F2B225164DD005682FD /* RadioData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F2A225164DD005682FD /* RadioData.swift */; };
 		D38E9F2D2251682E005682FD /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F2C2251682E005682FD /* RadioTableViewCell.swift */; };
@@ -45,6 +51,8 @@
 		D319E8BA22540BB9009DF7A9 /* PlaylistTracksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksData.swift; sourceTree = "<group>"; };
 		D319E8BE22540E43009DF7A9 /* PlaylistTracksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksTableViewController.swift; sourceTree = "<group>"; };
 		D319E8C022540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTracksTableViewCell.swift; sourceTree = "<group>"; };
+		D343CB7E227056CB0049C30A /* ThemeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewController.swift; sourceTree = "<group>"; };
+		D343CB80227056F50049C30A /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D35366F2223F10550062736A /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35366F5223F10550062736A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D35366F7223F10550062736A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +66,10 @@
 		D378EE06223F14450002DF86 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		D378EE08223F14950002DF86 /* PlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistResponse.swift; sourceTree = "<group>"; };
 		D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTabViewController.swift; sourceTree = "<group>"; };
+		D37E6EDD226379490029A298 /* Moment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moment.xcdatamodel; sourceTree = "<group>"; };
+		D37E6EDF226384860029A298 /* RadioStreamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStreamResponse.swift; sourceTree = "<group>"; };
+		D37E6EE12263C5050029A298 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		D37E6EE32263D7700029A298 /* ThemeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeNetwork.swift; sourceTree = "<group>"; };
 		D3892EEF22594F1400FE6128 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		D38E9F2A225164DD005682FD /* RadioData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioData.swift; sourceTree = "<group>"; };
 		D38E9F2C2251682E005682FD /* RadioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
@@ -98,6 +110,15 @@
 			path = Playlist;
 			sourceTree = "<group>";
 		};
+		D343CB7D227056A00049C30A /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				D343CB7E227056CB0049C30A /* ThemeCollectionViewController.swift */,
+				D343CB80227056F50049C30A /* ThemeCollectionViewCell.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		D35366E9223F10550062736A = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +138,7 @@
 		D35366F4223F10550062736A /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				D37E6EDB2263791B0029A298 /* Model */,
 				D38E9F2822516482005682FD /* Data */,
 				D378EE0A223F18CA0002DF86 /* Controller */,
 				D378EE03223F12FE0002DF86 /* NetworkRequest */,
@@ -128,6 +150,7 @@
 				D3536701223F105A0062736A /* LaunchScreen.storyboard */,
 				D3536704223F105A0062736A /* Info.plist */,
 				D35366FC223F10550062736A /* Moment.xcdatamodeld */,
+				D37E6EE12263C5050029A298 /* Player.swift */,
 			);
 			path = Moment;
 			sourceTree = "<group>";
@@ -139,6 +162,7 @@
 				D38E9F3222518555005682FD /* ImageNetwork.swift */,
 				D319E8AC2252B286009DF7A9 /* PlaylistNetwork.swift */,
 				D319E8B622540866009DF7A9 /* PlaylistTracksNetwork.swift */,
+				D37E6EE32263D7700029A298 /* ThemeNetwork.swift */,
 			);
 			path = NetworkRequest;
 			sourceTree = "<group>";
@@ -146,12 +170,21 @@
 		D378EE0A223F18CA0002DF86 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D343CB7D227056A00049C30A /* Theme */,
 				D319E8B12252B4B5009DF7A9 /* Playlist */,
 				D319E8B02252B4A2009DF7A9 /* Radio */,
 				D38E9F3022517267005682FD /* GeneralViewController.swift */,
 				D3892EEF22594F1400FE6128 /* MediaPlayerViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D37E6EDB2263791B0029A298 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D37E6EDC226379490029A298 /* Moment.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D38E9F2822516482005682FD /* Data */ = {
@@ -171,6 +204,7 @@
 				D378EE06223F14450002DF86 /* Headers.swift */,
 				D378EE08223F14950002DF86 /* PlaylistResponse.swift */,
 				D319E8B822540959009DF7A9 /* PlaylistTracksResponse.swift */,
+				D37E6EDF226384860029A298 /* RadioStreamResponse.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -256,6 +290,7 @@
 				D38E9F3322518555005682FD /* ImageNetwork.swift in Sources */,
 				D38E9F2F22516A17005682FD /* RadioTableViewController.swift in Sources */,
 				D319E8AD2252B286009DF7A9 /* PlaylistNetwork.swift in Sources */,
+				D37E6EE0226384860029A298 /* RadioStreamResponse.swift in Sources */,
 				D319E8C122540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift in Sources */,
 				D319E8BF22540E43009DF7A9 /* PlaylistTracksTableViewController.swift in Sources */,
 				D38E9F3122517267005682FD /* GeneralViewController.swift in Sources */,
@@ -263,13 +298,18 @@
 				D319E8B52252B89D009DF7A9 /* PlaylistTableViewCell.swift in Sources */,
 				D38E9F2D2251682E005682FD /* RadioTableViewCell.swift in Sources */,
 				D378EE09223F14950002DF86 /* PlaylistResponse.swift in Sources */,
+				D343CB81227056F50049C30A /* ThemeCollectionViewCell.swift in Sources */,
 				D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */,
 				D319E8AF2252B392009DF7A9 /* PlaylistData.swift in Sources */,
 				D38E9F2B225164DD005682FD /* RadioData.swift in Sources */,
+				D343CB7F227056CB0049C30A /* ThemeCollectionViewController.swift in Sources */,
 				D3892EF022594F1400FE6128 /* MediaPlayerViewController.swift in Sources */,
 				D378EE02223F12E60002DF86 /* RadioResponse.swift in Sources */,
+				D37E6EE22263C5050029A298 /* Player.swift in Sources */,
+				D37E6EE42263D7700029A298 /* ThemeNetwork.swift in Sources */,
 				D319E8B922540959009DF7A9 /* PlaylistTracksResponse.swift in Sources */,
 				D319E8B722540866009DF7A9 /* PlaylistTracksNetwork.swift in Sources */,
+				D37E6EDE226379490029A298 /* Moment.xcdatamodeld in Sources */,
 				D35366FE223F10550062736A /* Moment.xcdatamodeld in Sources */,
 				D35366F6223F10550062736A /* AppDelegate.swift in Sources */,
 				D319E8B32252B7F1009DF7A9 /* PlaylistTableViewController.swift in Sources */,
@@ -481,6 +521,16 @@
 				D35366FD223F10550062736A /* Moment.xcdatamodel */,
 			);
 			currentVersion = D35366FD223F10550062736A /* Moment.xcdatamodel */;
+			path = Moment.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		D37E6EDC226379490029A298 /* Moment.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D37E6EDD226379490029A298 /* Moment.xcdatamodel */,
+			);
+			currentVersion = D37E6EDD226379490029A298 /* Moment.xcdatamodel */;
 			path = Moment.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

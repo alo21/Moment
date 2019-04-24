@@ -15,47 +15,48 @@ class MediaPlayerViewController: UIViewController {
     
     @IBOutlet var forwardButton: UIButton!
     @IBOutlet var backwardButton: UIButton!
+    @IBOutlet var playButton: UIButton!
     @IBOutlet var songNameLabel: UILabel!
     @IBOutlet var albumImage: UIImageView!
-
-    var AudioPlayer = AVAudioPlayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        albumImage.image = UIImage(named: "placeholder")
         print("Media player up and running")
-        
-
+    
     }
     
     func playTrack(filePath: URL){
         
-        print("Playing track")
-        
-        print(filePath)
-        
         do {
-            print("Yeee")
             
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            AudioPlayer = try AVAudioPlayer(contentsOf: filePath)
+            Player.shared.AudioPlayer = try AVAudioPlayer(contentsOf: filePath)
             print(filePath)
-            AudioPlayer.play()
-            print("lol")
+            Player.shared.AudioPlayer.play()
             
         } catch {
-            print("Something went wrong")
+            print("Couldn't play the song")
         }
         
         
     }
     
     
-    @IBAction func playPressed(_ sender: Any) {
+    @IBAction func playPressed(_ sender: UIButton) {
         
-        print("Play pressed")
+        if Player.shared.AudioPlayer.isPlaying {
+            Player.shared.AudioPlayer.pause()
+            sender.setImage(UIImage(named: "Play"), for: .normal)
+        } else {
+            Player.shared.AudioPlayer.play()
+            sender.setImage(UIImage(named: "Pause"), for: .normal)
+
+        }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
