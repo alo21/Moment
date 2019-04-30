@@ -39,6 +39,7 @@
 		D38E9F2F22516A17005682FD /* RadioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F2E22516A17005682FD /* RadioTableViewController.swift */; };
 		D38E9F3122517267005682FD /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F3022517267005682FD /* GeneralViewController.swift */; };
 		D38E9F3322518555005682FD /* ImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F3222518555005682FD /* ImageNetwork.swift */; };
+		D3BBC0DB2278F6FC00174454 /* RootUIviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		D38E9F2E22516A17005682FD /* RadioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTableViewController.swift; sourceTree = "<group>"; };
 		D38E9F3022517267005682FD /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		D38E9F3222518555005682FD /* ImageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetwork.swift; sourceTree = "<group>"; };
+		D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUIviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		D378EE0A223F18CA0002DF86 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3BBC0D92278F6BB00174454 /* Root */,
 				D343CB7D227056A00049C30A /* Theme */,
 				D319E8B12252B4B5009DF7A9 /* Playlist */,
 				D319E8B02252B4A2009DF7A9 /* Radio */,
@@ -195,6 +198,14 @@
 				D319E8BA22540BB9009DF7A9 /* PlaylistTracksData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		D3BBC0D92278F6BB00174454 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		D3E0B851223F11C300F17031 /* Codable */ = {
@@ -298,6 +309,7 @@
 				D319E8B52252B89D009DF7A9 /* PlaylistTableViewCell.swift in Sources */,
 				D38E9F2D2251682E005682FD /* RadioTableViewCell.swift in Sources */,
 				D378EE09223F14950002DF86 /* PlaylistResponse.swift in Sources */,
+				D3BBC0DB2278F6FC00174454 /* RootUIviewViewController.swift in Sources */,
 				D343CB81227056F50049C30A /* ThemeCollectionViewCell.swift in Sources */,
 				D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */,
 				D319E8AF2252B392009DF7A9 /* PlaylistData.swift in Sources */,

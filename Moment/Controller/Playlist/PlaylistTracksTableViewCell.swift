@@ -12,6 +12,7 @@ class PlaylistTracksTableViewCell: UITableViewCell {
     
     
     @IBOutlet var myLabel: UILabel!
+    @IBOutlet var downloadImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

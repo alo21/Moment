@@ -14,5 +14,7 @@ class Player{
     private init(){}
     static let shared = Player()
     
+    
+    var playinSongName = ""
     var AudioPlayer = AVAudioPlayer()
 }

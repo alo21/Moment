@@ -15,6 +15,7 @@ class PlaylistTableViewController: UITableViewController {
         
         PlaylistNetwork().getPlaylist(completionHandler: {self.updateTableView()})
 
+
         
     }
 

@@ -128,7 +128,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gnm-98-dGh" customClass="ThemeCollectionViewCell" customModule="Moment" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="gnm-98-dGh" customClass="ThemeCollectionViewCell" customModule="Moment" customModuleProvider="target">
                                 <rect key="frame" x="75.5" y="0.0" width="224" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -269,16 +269,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6n-KL-hNp">
-                                            <rect key="frame" x="166" y="23" width="0.0" height="0.0"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6n-KL-hNp">
+                                            <rect key="frame" x="5" y="33.5" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEI-Cr-lb8" userLabel="DownloadImage">
+                                            <rect key="frame" x="311" y="5" width="48" height="56"/>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="w6n-KL-hNp" firstAttribute="centerY" secondItem="f3T-Yk-4Gj" secondAttribute="centerY" id="QsZ-BX-Jvj"/>
+                                        <constraint firstItem="cEI-Cr-lb8" firstAttribute="centerY" secondItem="f3T-Yk-4Gj" secondAttribute="centerY" id="by0-0o-oC6"/>
+                                        <constraint firstAttribute="trailing" secondItem="cEI-Cr-lb8" secondAttribute="trailing" constant="5" id="m5S-c4-KX1"/>
+                                        <constraint firstItem="w6n-KL-hNp" firstAttribute="leading" secondItem="f3T-Yk-4Gj" secondAttribute="leading" constant="5" id="t07-hb-ABp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="downloadImage" destination="cEI-Cr-lb8" id="zvv-iw-JE1"/>
                                     <outlet property="myLabel" destination="w6n-KL-hNp" id="dD5-qK-IM8"/>
                                 </connections>
                             </tableViewCell>
@@ -303,7 +312,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2884" y="644"/>
+            <point key="canvasLocation" x="2884" y="643.62818590704649"/>
         </scene>
         <!--Playlist-->
         <scene sceneID="o4o-0X-NW6">
@@ -328,7 +337,7 @@
         <!--Root Controller-->
         <scene sceneID="o9y-Um-ZBB">
             <objects>
-                <viewController id="i9T-Q2-vQ8" userLabel="Root Controller" sceneMemberID="viewController">
+                <viewController id="i9T-Q2-vQ8" userLabel="Root Controller" customClass="RootUIviewViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9qT-P2-kmz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,13 +353,17 @@
                                 <rect key="frame" x="0.0" y="609" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="mGY-wy-KHP" kind="embed" id="J16-Vq-hd0"/>
+                                    <segue destination="mGY-wy-KHP" kind="embed" id="2Dr-zx-O3N"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EUg-XA-r66"/>
                     </view>
+                    <connections>
+                        <outlet property="mediaPlayerContainer" destination="tCM-Nl-Pcs" id="mbW-jq-ZEr"/>
+                        <outlet property="navigationContainer" destination="ba2-fC-GPA" id="ehu-kE-spI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJq-L0-UT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,7 +372,7 @@
         <!--General View Controller-->
         <scene sceneID="1Fb-RQ-bsW">
             <objects>
-                <tabBarController id="qql-FV-IJk" customClass="GeneralViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="GeneralViewController" storyboardIdentifier="GeneralViewController" id="qql-FV-IJk" customClass="GeneralViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jg0-LP-krG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -380,7 +393,7 @@
         <!--Media Player Controller-->
         <scene sceneID="Cs0-iK-zGZ">
             <objects>
-                <viewController id="mGY-wy-KHP" userLabel="Media Player Controller" customClass="MediaPlayerViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MediaPlayerController" storyboardIdentifier="MediaPlayerController" id="mGY-wy-KHP" userLabel="Media Player Controller" customClass="MediaPlayerViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pfa-yo-gzD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -449,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UU4-hM-HBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2362.4000000000001" y="1353.8230884557722"/>
+            <point key="canvasLocation" x="-2209" y="1389"/>
         </scene>
     </scenes>
     <resources>

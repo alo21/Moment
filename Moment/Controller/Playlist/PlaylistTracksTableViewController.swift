@@ -22,6 +22,7 @@ class PlaylistTracksTableViewController: UITableViewController {
         
         PlaylistTracksNetwork().getPlaylistTracks(playlistCode: playlist.id, completionHandler: updateTableView)
         
+        
     }
 
     // MARK: - Table view data source
@@ -44,6 +45,7 @@ class PlaylistTracksTableViewController: UITableViewController {
         let playlist = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
         
         cell.textLabel?.text = playlist.name
+        cell.imageView?.image = UIImage(named: "Download")
         
         //cell.imageView?.image = meme.finalImage
         
@@ -54,9 +56,16 @@ class PlaylistTracksTableViewController: UITableViewController {
         
         let track = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
         
+        let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "MediaPlayerController") as! MediaPlayerViewController
+        
+        print("###")
+        print(track.name)
+        
+        
         PlaylistTracksNetwork().downloadTrack(trackUrl: track.audio, completionHandler: { (myUrl) in
-            MediaPlayerViewController().playTrack(filePath: myUrl!)
+        MediaPlayerViewController().playTrack(filePath: myUrl!, track: track)
             })
+        
 
         }
 

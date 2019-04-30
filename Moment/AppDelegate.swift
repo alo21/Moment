@@ -14,11 +14,15 @@ import AVFoundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var AudioPlayer = AVAudioPlayer()
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mediaVC = mainStoryboard.instantiateViewController(withIdentifier: "MediaPlayerController") as! MediaPlayerViewController
+
+        
         return true
     }
 
