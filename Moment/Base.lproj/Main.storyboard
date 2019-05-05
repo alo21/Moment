@@ -156,13 +156,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="XsA-kk-Hk9">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="LfD-F8-Auh">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="mCT-55-vBP" id="OBD-2n-sE0"/>
-                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PlaylistCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistCell" rowHeight="66" id="1aS-Ox-NHn" customClass="PlaylistTableViewCell" customModule="Moment" customModuleProvider="target">
@@ -181,17 +178,25 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Playlist" id="PNq-3Z-Kzz"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="2lY-wf-kAs" id="PjV-Yi-9LO"/>
+                        <outlet property="searchBar" destination="LfD-F8-Auh" id="1WC-oF-AhT"/>
+                        <outlet property="searchDisplayController" destination="k5S-fK-eq5" id="LEh-v1-7zO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qe-5b-ml7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="2lY-wf-kAs">
                     <connections>
                         <outlet property="delegate" destination="mCT-55-vBP" id="ryr-We-ijH"/>
-                        <outlet property="searchBar" destination="XsA-kk-Hk9" id="An7-mo-LAF"/>
                         <outlet property="searchContentsController" destination="mCT-55-vBP" id="U3a-YO-dvn"/>
                         <outlet property="searchResultsDataSource" destination="mCT-55-vBP" id="50Z-r4-fjK"/>
                         <outlet property="searchResultsDelegate" destination="mCT-55-vBP" id="20H-eo-2Ad"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="k5S-fK-eq5">
+                    <connections>
+                        <outlet property="delegate" destination="mCT-55-vBP" id="MaF-K5-A6I"/>
+                        <outlet property="searchContentsController" destination="mCT-55-vBP" id="iRO-ia-Jam"/>
+                        <outlet property="searchResultsDataSource" destination="mCT-55-vBP" id="Mpg-bW-c9f"/>
+                        <outlet property="searchResultsDelegate" destination="mCT-55-vBP" id="zf4-yj-O8b"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -253,17 +258,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Kes-ye-Meh">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="MCp-zT-eb9" id="nLj-Zm-Vnm"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PlaylistTrackCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistTrackCell" rowHeight="67" id="yRg-zo-18H" customClass="PlaylistTracksTableViewCell" customModule="Moment" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yRg-zo-18H" id="f3T-Yk-4Gj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
@@ -305,7 +302,6 @@
                 <searchDisplayController id="lAJ-qz-j9I">
                     <connections>
                         <outlet property="delegate" destination="MCp-zT-eb9" id="595-Yp-h4m"/>
-                        <outlet property="searchBar" destination="Kes-ye-Meh" id="ZdY-bB-bWQ"/>
                         <outlet property="searchContentsController" destination="MCp-zT-eb9" id="b07-6R-9r4"/>
                         <outlet property="searchResultsDataSource" destination="MCp-zT-eb9" id="CWm-kG-KFc"/>
                         <outlet property="searchResultsDelegate" destination="MCp-zT-eb9" id="PzD-pM-ZKf"/>

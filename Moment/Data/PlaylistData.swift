@@ -12,6 +12,11 @@ var playlistDataGlobal: [playlist] = []
 
 class PlaylistData{
     
+    
+    func setPlaylist(playlist: [playlist]){
+        playlistDataGlobal = playlist
+    }
+    
     func getPlaylists() -> [playlist] {
         
         return playlistDataGlobal
@@ -22,6 +27,10 @@ class PlaylistData{
         
         playlistDataGlobal.append(playlist)
         print("Added playlist")
+    }
+    
+    func deleteItems(){
+        setPlaylist(playlist: [])
     }
 
 }

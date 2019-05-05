@@ -18,9 +18,9 @@ class PlaylistNetwork{
     let format = "&format=jsonpretty"
     let namesearch = "&namesearch=cool"
     
-    func getPlaylist(completionHandler: @escaping()->Void) -> Void{
+    func getPlaylist(term: String, completionHandler: @escaping()->Void) -> Void{
         
-        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/playlists/?client_id=7a746963&format=jsonpretty&limit=20")!)
+        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/playlists/?client_id=7a746963&format=jsonpretty&limit=20&name=" + term)!)
         let session = URLSession.shared
         
     
@@ -46,8 +46,12 @@ class PlaylistNetwork{
                 //self.radioArray = radioList.results.map({$0})
                 
                 print(playListList.results.count)
+                print(playListList.results)
                 
-                if PlaylistData().getPlaylists().count == 0 {
+                if PlaylistData().getPlaylists().count != 0 {
+                    print("ereasing previous playlist")
+                    PlaylistData().deleteItems()
+                }
                 
                     playListList.results.forEach{ playlist in
                         
@@ -55,7 +59,7 @@ class PlaylistNetwork{
                         PlaylistData().addPlaylist(playlist: playlist)
                     }
                     
-                }
+
                 
                 DispatchQueue.main.async {
                     

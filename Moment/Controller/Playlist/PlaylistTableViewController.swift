@@ -8,17 +8,27 @@
 
 import UIKit
 
-class PlaylistTableViewController: UITableViewController {
-
+class PlaylistTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    
+    @IBOutlet var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PlaylistNetwork().getPlaylist(completionHandler: {self.updateTableView()})
+        searchBar.delegate = self
+        
+        searchBar.placeholder = "Search for a playlist here..."
 
 
         
     }
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Maybe this time i'm ok")
+        PlaylistNetwork().getPlaylist(term: searchBar.text!, completionHandler: {self.updateTableView()})
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,6 +36,7 @@ class PlaylistTableViewController: UITableViewController {
     }
     
     func updateTableView(){
+        print("recieved new results")
         tableView.reloadData()
     }
 
