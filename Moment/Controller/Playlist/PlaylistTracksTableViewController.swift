@@ -9,13 +9,18 @@
 import UIKit
 import AVFoundation
 
+
 class PlaylistTracksTableViewController: UITableViewController {
+    
+    struct trackData {
+        var songName: String
+        var songURL: URL
+    }
     
 
     var playlist: playlist!
     var AudioPlayer = AVAudioPlayer()
     var lol: URL? = nil
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,16 +60,25 @@ class PlaylistTracksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let track = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
-        
-        let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "MediaPlayerController") as! MediaPlayerViewController
-        
-        print("###")
-        print(track.name)
-        
-        
-        PlaylistTracksNetwork().downloadTrack(trackUrl: track.audio, completionHandler: { (myUrl) in
-        MediaPlayerViewController().playTrack(filePath: myUrl!, track: track)
+                
+        PlaylistTracksNetwork().downloadTrack(trackUrl: track.audio, completionHandler: {
+            (myURL) in
+            
+            ImageNetwork().downloadImage(url: track.image, completionHandler: {
+                
+                (myImg) in
+                    
+                let song = ["songName": track.name, "songURL": myURL!, "songImage": myImg] as [String : Any]
+                    
+                    NotificationCenter.default.post(name: Notification.Name(songSelectedKey), object: song)
+                    
+                })
+                
             })
+        
+            
+            
+        
         
 
         }

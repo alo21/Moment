@@ -8,7 +8,9 @@
 
 import Foundation
 
-func downloadImage(url: String) {
+class ImageNetwork{
+
+func downloadImage(url: String, completionHandler: @escaping(Data?)->Void) {
     
     let request = URLRequest(url: URL(string: url)!)
     let session = URLSession.shared
@@ -34,7 +36,7 @@ func downloadImage(url: String) {
             
             print(data)
             print("Obtained image")
-            //completionHandler()
+            completionHandler(data)
             return
                 
             }
@@ -45,5 +47,6 @@ func downloadImage(url: String) {
     
     return
     
+}
 }
 

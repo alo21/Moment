@@ -9,8 +9,11 @@
 import UIKit
 import AVFoundation
 
+let songSelectedKey = "it.aleLos.songSelected"
+
 
 class MediaPlayerViewController: UIViewController {
+
     
     
     @IBOutlet var forwardButton: UIButton!
@@ -18,6 +21,8 @@ class MediaPlayerViewController: UIViewController {
     @IBOutlet var playButton: UIButton!
     @IBOutlet var songNameLabel: UILabel?
     @IBOutlet var albumImage: UIImageView!
+    
+    let songSelecred = Notification.Name(rawValue: songSelectedKey)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,25 +32,46 @@ class MediaPlayerViewController: UIViewController {
         
         albumImage.image = UIImage(named: "placeholder")
         print("Media player up and running")
+        
+        createObserver()
+        
+       
+    }
+    
+    
+    func createObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(MediaPlayerViewController.foo), name: songSelecred, object: nil)
+        
     
     }
     
-    func playTrack(filePath: URL, track: track){
+    @objc func foo(notification: Notification){
+        
+        print("Song selected")
+        let song = notification.object as! NSDictionary
+
+        print(song["songName"]!)
+        setSongTitle(songName: song["songName"]! as! String)
+        playTrack(filePath: song["songURL"]! as! URL)
+        DispatchQueue.main.async {
+            self.albumImage.image =  UIImage(data:song["songImage"]! as! Data,scale:1.0)
+        }
+
+    }
+    
+    func playTrack(filePath: URL){
         
         do {
-            
-            //print(track)
-            print(songNameLabel?.text)
-            //setSongTitle(songName: track.name)
-            
             
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             Player.shared.AudioPlayer = try AVAudioPlayer(contentsOf: filePath)
-            print(filePath)
             Player.shared.AudioPlayer.play()
-            //playPressed(playButton)
+            
+            DispatchQueue.main.async {
+                self.playButton.setImage(UIImage(named: "Pause"), for: .normal)
+            }
             
         } catch {
             print("Couldn't play the song")
@@ -58,7 +84,9 @@ class MediaPlayerViewController: UIViewController {
     
     func setSongTitle(songName: String){
         if let label = songNameLabel{
-            label.text = songName
+            DispatchQueue.main.async {
+                label.text = songName
+            }
         } else {
             print("The label doesn't exsist")
         }
@@ -69,10 +97,14 @@ class MediaPlayerViewController: UIViewController {
         
         if Player.shared.AudioPlayer.isPlaying {
             Player.shared.AudioPlayer.pause()
-            sender.setImage(UIImage(named: "Play"), for: .normal)
+            DispatchQueue.main.async {
+                sender.setImage(UIImage(named: "Play"), for: .normal)
+            }
         } else {
             Player.shared.AudioPlayer.play()
-            sender.setImage(UIImage(named: "Pause"), for: .normal)
+                DispatchQueue.main.async {
+                    sender.setImage(UIImage(named: "Pause"), for: .normal)
+                    }
 
         }
         
@@ -82,9 +114,7 @@ class MediaPlayerViewController: UIViewController {
         print("##############")
         print("Disappearing")
     }
-    
-    
-    
 
 
 }
+
