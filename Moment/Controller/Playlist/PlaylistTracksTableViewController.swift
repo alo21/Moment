@@ -68,7 +68,7 @@ class PlaylistTracksTableViewController: UITableViewController {
                 
                 (myImg) in
                     
-                let song = ["songName": track.name, "songURL": myURL!, "songImage": myImg as Any] as [String : Any]
+                let song = ["songName": track.name, "songURL": myURL!, "songImage": myImg as Any, "totalTime": track.duration] as [String : Any]
                     
                     NotificationCenter.default.post(name: Notification.Name(songSelectedKey), object: song)
                     

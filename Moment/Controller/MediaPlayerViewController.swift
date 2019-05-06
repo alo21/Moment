@@ -21,6 +21,7 @@ class MediaPlayerViewController: UIViewController {
     @IBOutlet var playButton: UIButton!
     @IBOutlet var songNameLabel: UILabel?
     @IBOutlet var albumImage: UIImageView!
+    var totalTime:String!
     
     let songSelecred = Notification.Name(rawValue: songSelectedKey)
     
@@ -40,17 +41,16 @@ class MediaPlayerViewController: UIViewController {
     
     
     func createObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(MediaPlayerViewController.foo), name: songSelecred, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.OnSongSelected), name: songSelecred, object: nil)
         
-    
     }
     
-    @objc func foo(notification: Notification){
+    @objc func OnSongSelected(notification: Notification){
         
         print("Song selected")
         let song = notification.object as! NSDictionary
 
-        print(song["songName"]!)
+        totalTime = song["totalTime"]! as! String
         setSongTitle(songName: song["songName"]! as! String)
         playTrack(filePath: song["songURL"]! as! URL)
         DispatchQueue.main.async {
@@ -112,6 +112,17 @@ class MediaPlayerViewController: UIViewController {
     
     @IBAction func openModal(_ sender: Any) {
         print("I tapped on the controller")
+        
+        let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "SongModalViewController") as! SongModalViewController
+        VC1.modalTransitionStyle = .crossDissolve
+        VC1.modalPresentationStyle = .overCurrentContext
+        
+        VC1.songNamePassed = songNameLabel
+        VC1.albumImagePassed = albumImage
+        VC1.totalTimePassed = self.totalTime
+        
+        self.present(VC1, animated: true, completion: nil)
+
     }
     
 

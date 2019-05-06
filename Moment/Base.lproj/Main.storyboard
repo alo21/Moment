@@ -313,7 +313,7 @@
         <!--Song Modal View Controller-->
         <scene sceneID="xpW-Xj-8Xa">
             <objects>
-                <viewController id="T6M-wB-1tD" customClass="SongModalViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SongModalViewController" storyboardIdentifier="SongModalViewController" id="T6M-wB-1tD" customClass="SongModalViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rs8-iS-y5V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,29 +321,56 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cno-RH-2kV">
                                 <rect key="frame" x="16" y="38" width="343" height="342"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="45b-re-jFn">
-                                <rect key="frame" x="14" y="456" width="347" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-H7-Vhm">
+                                <rect key="frame" x="16" y="556" width="343" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-H7-Vhm">
-                                <rect key="frame" x="16" y="554" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCl-8k-xxY">
+                                <rect key="frame" x="317" y="493" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vn6-iT-4wV">
+                                <rect key="frame" x="16" y="493" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b9d-M1-TUj">
+                                <rect key="frame" x="16" y="463" width="343" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="T4J-iR-lsB"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3cf-JP-69U" appends="YES" id="eh4-NH-BOA"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="albumImage" destination="cno-RH-2kV" id="1JH-VQ-UNI"/>
-                        <outlet property="slider" destination="45b-re-jFn" id="MFD-ic-wUB"/>
+                        <outlet property="albumImage" destination="cno-RH-2kV" id="RmI-l8-sXP"/>
+                        <outlet property="currentTime" destination="Vn6-iT-4wV" id="8ga-BQ-IkD"/>
+                        <outlet property="gestureRec" destination="3cf-JP-69U" id="uWh-m9-Isy"/>
+                        <outlet property="progressBar" destination="b9d-M1-TUj" id="kbL-ZM-yXv"/>
                         <outlet property="songName" destination="yLc-H7-Vhm" id="pI3-yu-w7K"/>
+                        <outlet property="totalTime" destination="CCl-8k-xxY" id="qIK-kS-CMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJ9-wi-I7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="3cf-JP-69U">
+                    <connections>
+                        <action selector="dismissModal:" destination="T6M-wB-1tD" id="V75-7F-KN2"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1138.4000000000001" y="1662.8185907046477"/>
         </scene>
