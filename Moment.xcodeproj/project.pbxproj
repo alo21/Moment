@@ -29,7 +29,7 @@
 		D378EE07223F14450002DF86 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE06223F14450002DF86 /* Headers.swift */; };
 		D378EE09223F14950002DF86 /* PlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE08223F14950002DF86 /* PlaylistResponse.swift */; };
 		D378EE0C223F18F10002DF86 /* RadioTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378EE0B223F18F10002DF86 /* RadioTabViewController.swift */; };
-		D37E6EDE226379490029A298 /* Moment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EDC226379490029A298 /* Moment.xcdatamodeld */; };
+		D37E6EDE226379490029A298 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EDC226379490029A298 /* Data.xcdatamodeld */; };
 		D37E6EE0226384860029A298 /* RadioStreamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EDF226384860029A298 /* RadioStreamResponse.swift */; };
 		D37E6EE22263C5050029A298 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EE12263C5050029A298 /* Player.swift */; };
 		D37E6EE42263D7700029A298 /* ThemeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E6EE32263D7700029A298 /* ThemeNetwork.swift */; };
@@ -185,7 +185,7 @@
 		D37E6EDB2263791B0029A298 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D37E6EDC226379490029A298 /* Moment.xcdatamodeld */,
+				D37E6EDC226379490029A298 /* Data.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				D37E6EE42263D7700029A298 /* ThemeNetwork.swift in Sources */,
 				D319E8B922540959009DF7A9 /* PlaylistTracksResponse.swift in Sources */,
 				D319E8B722540866009DF7A9 /* PlaylistTracksNetwork.swift in Sources */,
-				D37E6EDE226379490029A298 /* Moment.xcdatamodeld in Sources */,
+				D37E6EDE226379490029A298 /* Data.xcdatamodeld in Sources */,
 				D35366FE223F10550062736A /* Moment.xcdatamodeld in Sources */,
 				D35366F6223F10550062736A /* AppDelegate.swift in Sources */,
 				D319E8B32252B7F1009DF7A9 /* PlaylistTableViewController.swift in Sources */,
@@ -537,13 +537,13 @@
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		D37E6EDC226379490029A298 /* Moment.xcdatamodeld */ = {
+		D37E6EDC226379490029A298 /* Data.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				D37E6EDD226379490029A298 /* Moment.xcdatamodel */,
 			);
 			currentVersion = D37E6EDD226379490029A298 /* Moment.xcdatamodel */;
-			path = Moment.xcdatamodeld;
+			path = Data.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

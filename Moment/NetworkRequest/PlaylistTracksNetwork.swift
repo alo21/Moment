@@ -42,6 +42,10 @@ class PlaylistTracksNetwork{
                 
                 if(playlistTracks.results.count != 0) {
                     print(playlistTracks.results[0].tracks.count)
+                    
+                    if PlaylistTracksData().getPlaylistsTracks().count != 0 {
+                        PlaylistTracksData().ereasePlaylistTracks()
+                    }
     
                     playlistTracks.results[0].tracks.forEach{ track in
                         PlaylistTracksData().addPlaylistTrack(track: track)

@@ -7,20 +7,13 @@
 //
 
 import UIKit
-import AVFoundation
 
 
 class PlaylistTracksTableViewController: UITableViewController {
     
-    struct trackData {
-        var songName: String
-        var songURL: URL
-    }
-    
 
     var playlist: playlist!
-    var AudioPlayer = AVAudioPlayer()
-    var lol: URL? = nil
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +52,13 @@ class PlaylistTracksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
         let track = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
                 
         PlaylistTracksNetwork().downloadTrack(trackUrl: track.audio, completionHandler: {
@@ -68,46 +68,20 @@ class PlaylistTracksTableViewController: UITableViewController {
                 
                 (myImg) in
                     
-                let song = ["songName": track.name, "songURL": myURL!, "songImage": myImg] as [String : Any]
+                let song = ["songName": track.name, "songURL": myURL!, "songImage": myImg as Any] as [String : Any]
                     
                     NotificationCenter.default.post(name: Notification.Name(songSelectedKey), object: song)
                     
                 })
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
                 
             })
-        
-            
-            
-        
-        
 
         }
 
-    
-//    func playTrack(filePath: URL){
-//
-//        print(filePath)
-//
-//        do {
-//            print("Yeee")
-//            AudioPlayer = try AVAudioPlayer(contentsOf: filePath)
-//            AudioPlayer.play()
-//            print("lol")
-//
-//        } catch {
-//            print("Something went wrong")
-//        }
-//
-//
-//    }
-    
-    
-
-    
-    
-
-    
-    
     }
     
     
