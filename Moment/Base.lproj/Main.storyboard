@@ -156,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="LfD-F8-Auh">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="LfD-F8-Auh">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -310,6 +310,43 @@
             </objects>
             <point key="canvasLocation" x="2884" y="643.62818590704649"/>
         </scene>
+        <!--Song Modal View Controller-->
+        <scene sceneID="xpW-Xj-8Xa">
+            <objects>
+                <viewController id="T6M-wB-1tD" customClass="SongModalViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rs8-iS-y5V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cno-RH-2kV">
+                                <rect key="frame" x="16" y="38" width="343" height="342"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="45b-re-jFn">
+                                <rect key="frame" x="14" y="456" width="347" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-H7-Vhm">
+                                <rect key="frame" x="16" y="554" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="T4J-iR-lsB"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumImage" destination="cno-RH-2kV" id="1JH-VQ-UNI"/>
+                        <outlet property="slider" destination="45b-re-jFn" id="MFD-ic-wUB"/>
+                        <outlet property="songName" destination="yLc-H7-Vhm" id="pI3-yu-w7K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJ9-wi-I7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1138.4000000000001" y="1662.8185907046477"/>
+        </scene>
         <!--Playlist-->
         <scene sceneID="o4o-0X-NW6">
             <objects>
@@ -430,6 +467,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LnO-Lv-48e" firstAttribute="leading" secondItem="NXZ-4f-oyY" secondAttribute="leading" constant="5" id="0b4-dE-huh"/>
                             <constraint firstItem="NXZ-4f-oyY" firstAttribute="bottom" secondItem="g3W-3b-uSB" secondAttribute="bottom" constant="15" id="81q-UG-WpG"/>
@@ -450,6 +488,9 @@
                             <constraint firstItem="NXZ-4f-oyY" firstAttribute="bottom" secondItem="LnO-Lv-48e" secondAttribute="bottom" constant="5" id="jhI-bv-0bY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NXZ-4f-oyY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QBw-Be-7Rh" appends="YES" id="d9J-rX-oFo"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="albumImage" destination="LnO-Lv-48e" id="XUW-TR-08L"/>
@@ -460,6 +501,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UU4-hM-HBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QBw-Be-7Rh">
+                    <connections>
+                        <action selector="openModal:" destination="mGY-wy-KHP" id="p0O-xY-Iiu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2210.4000000000001" y="1388.9055472263869"/>
         </scene>

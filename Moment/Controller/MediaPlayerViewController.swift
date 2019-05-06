@@ -110,6 +110,11 @@ class MediaPlayerViewController: UIViewController {
         
     }
     
+    @IBAction func openModal(_ sender: Any) {
+        print("I tapped on the controller")
+    }
+    
+
     override func viewDidDisappear(_ animated: Bool) {
         print("##############")
         print("Disappearing")

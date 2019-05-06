@@ -39,6 +39,7 @@
 		D38E9F2F22516A17005682FD /* RadioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F2E22516A17005682FD /* RadioTableViewController.swift */; };
 		D38E9F3122517267005682FD /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F3022517267005682FD /* GeneralViewController.swift */; };
 		D38E9F3322518555005682FD /* ImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38E9F3222518555005682FD /* ImageNetwork.swift */; };
+		D393033B227FB48F00777A31 /* SongModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393033A227FB48F00777A31 /* SongModalViewController.swift */; };
 		D3BBC0DB2278F6FC00174454 /* RootUIviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		D38E9F2E22516A17005682FD /* RadioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTableViewController.swift; sourceTree = "<group>"; };
 		D38E9F3022517267005682FD /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		D38E9F3222518555005682FD /* ImageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetwork.swift; sourceTree = "<group>"; };
+		D393033A227FB48F00777A31 /* SongModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModalViewController.swift; sourceTree = "<group>"; };
 		D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUIviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 				D319E8B02252B4A2009DF7A9 /* Radio */,
 				D38E9F3022517267005682FD /* GeneralViewController.swift */,
 				D3892EEF22594F1400FE6128 /* MediaPlayerViewController.swift */,
+				D393033A227FB48F00777A31 /* SongModalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				D35366F8223F10550062736A /* ViewController.swift in Sources */,
 				D38E9F3322518555005682FD /* ImageNetwork.swift in Sources */,
 				D38E9F2F22516A17005682FD /* RadioTableViewController.swift in Sources */,
+				D393033B227FB48F00777A31 /* SongModalViewController.swift in Sources */,
 				D319E8AD2252B286009DF7A9 /* PlaylistNetwork.swift in Sources */,
 				D37E6EE0226384860029A298 /* RadioStreamResponse.swift in Sources */,
 				D319E8C122540F2E009DF7A9 /* PlaylistTracksTableViewCell.swift in Sources */,
