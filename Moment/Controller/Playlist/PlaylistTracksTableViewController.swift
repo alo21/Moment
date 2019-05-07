@@ -18,12 +18,17 @@ class PlaylistTracksTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PlaylistTracksNetwork().getPlaylistTracks(playlistCode: playlist.id, completionHandler: updateTableView)
+        PlaylistTracksNetwork().getPlaylistTracks(playlistCode: playlist.id, completionHandler: updateTableView, errorHandler: {
+            error in
+            DispatchQueue.main.async {
+                self.alertError(message: error.localizedDescription)
+            }
+            
+        })
         
         
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -60,7 +65,7 @@ class PlaylistTracksTableViewController: UITableViewController {
         activityIndicator.startAnimating()
         
         let track = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
-                
+        
         PlaylistTracksNetwork().downloadTrack(trackUrl: track.audio, completionHandler: {
             (myURL) in
             
@@ -72,17 +77,46 @@ class PlaylistTracksTableViewController: UITableViewController {
                     
                     NotificationCenter.default.post(name: Notification.Name(songSelectedKey), object: song)
                     
-                })
+            }, errorHandler: {
+                
+                error in
+                
+                DispatchQueue.main.async {
+                    self.alertError(message: error.localizedDescription)
+                }
+                
+                
+            })
             
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
             }
                 
-            })
+        }, errorHandler: {
+            error in
+            
+            DispatchQueue.main.async {
+                self.alertError(message: error.localizedDescription)
+            }
+            
+        })
 
         }
-
+    
+    
+    func alertError(message: String) {
+        
+        print("Show error alert")
+        
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
     }
     
-    
+
+    }
 

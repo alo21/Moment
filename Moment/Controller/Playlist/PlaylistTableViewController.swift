@@ -20,13 +20,30 @@ class PlaylistTableViewController: UITableViewController, UISearchBarDelegate {
         
         searchBar.placeholder = "Search for a playlist here..."
 
-
+    }
+    
+    func alertError(message: String) {
+        
+        print("Show error alert")
+        
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("Maybe this time i'm ok")
-        PlaylistNetwork().getPlaylist(term: searchBar.text!, completionHandler: {self.updateTableView()})
+        PlaylistNetwork().getPlaylist(term: searchBar.text!, completionHandler: {self.updateTableView()}, errorHandler:{
+            error in
+            
+            DispatchQueue.main.async {
+                self.alertError(message: error.localizedDescription)
+            }
+            
+        })
     }
     
     // MARK: - Table view data source
@@ -39,6 +56,7 @@ class PlaylistTableViewController: UITableViewController, UISearchBarDelegate {
         print("recieved new results")
         tableView.reloadData()
     }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PlaylistData().getPlaylists().count

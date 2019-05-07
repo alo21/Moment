@@ -12,7 +12,7 @@ import Foundation
 class PlaylistTracksNetwork{
     
     
-    func getPlaylistTracks(playlistCode: String, completionHandler: @escaping()->Void){
+    func getPlaylistTracks(playlistCode: String, completionHandler: @escaping()->Void, errorHandler: @escaping(Error)->Void){
         
         
         let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/playlists/tracks/?client_id=7a746963&format=jsonpretty&limit=20&id=" + playlistCode)!)
@@ -22,8 +22,7 @@ class PlaylistTracksNetwork{
         let task = session.dataTask(with: request) { data, response, error in
             if error != nil { // Handle error...
                 
-                //errorHandler(error!)
-                print(error?.localizedDescription ?? "Unknow error")
+                errorHandler(error!)
                 
                 return
             }
@@ -77,7 +76,7 @@ class PlaylistTracksNetwork{
     
     
     
-    func downloadTrack(trackUrl: String, completionHandler: @escaping(URL?)->Void){
+    func downloadTrack(trackUrl: String, completionHandler: @escaping(URL?)->Void, errorHandler: @escaping(Error)->Void){
         
         // Create destination URL
         let documentsUrl:URL =  (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL?)!
@@ -106,11 +105,13 @@ class PlaylistTracksNetwork{
                     try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrl)
                     completionHandler(destinationFileUrl)
                 } catch (let writeError) {
+                    errorHandler(writeError)
                     print("Error creating a file \(destinationFileUrl) : \(writeError)")
                 }
                 
             } else {
-                print(error!.localizedDescription);
+                errorHandler(error!)
+                //print(error!.localizedDescription);
             }
         }
         task.resume()

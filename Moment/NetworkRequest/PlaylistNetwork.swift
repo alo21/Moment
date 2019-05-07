@@ -18,17 +18,19 @@ class PlaylistNetwork{
     let format = "&format=jsonpretty"
     let namesearch = "&namesearch=cool"
     
-    func getPlaylist(term: String, completionHandler: @escaping()->Void) -> Void{
+    func getPlaylist(term: String, completionHandler: @escaping()->Void, errorHandler: @escaping(Error)->Void) -> Void{
         
-        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/playlists/?client_id=7a746963&format=jsonpretty&limit=20&name=" + term)!)
+        let sanitizedTerm = term.replacingOccurrences(of: " ", with: "%20")
+        
+        let request = URLRequest(url: URL(string: "https://api.jamendo.com/v3.0/playlists/?client_id=7a746963&format=jsonpretty&limit=20&name=" + sanitizedTerm)!)
         let session = URLSession.shared
         
     
         let task = session.dataTask(with: request) { data, response, error in
             if error != nil { // Handle error...
                 
-                //errorHandler(error!)
-                print(error?.localizedDescription ?? "Unknow error")
+                errorHandler(error!)
+                //print(error?.localizedDescription ?? "Unknow error")
                 
                 return
             }

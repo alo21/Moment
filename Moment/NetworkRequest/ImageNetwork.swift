@@ -10,7 +10,7 @@ import Foundation
 
 class ImageNetwork{
 
-func downloadImage(url: String, completionHandler: @escaping(Data?)->Void) {
+    func downloadImage(url: String, completionHandler: @escaping(Data?)->Void, errorHandler: @escaping(Error)->Void) {
     
     let request = URLRequest(url: URL(string: url)!)
     let session = URLSession.shared
@@ -20,8 +20,8 @@ func downloadImage(url: String, completionHandler: @escaping(Data?)->Void) {
     let task = session.dataTask(with: request) { data, response, error in
         if error != nil { // Handle error...
             
-            //errorHandler(error!)
-            print(error?.localizedDescription ?? "Unknow error")
+            errorHandler(error!)
+            //print(error?.localizedDescription ?? "Unknow error")
             
             return
         }
