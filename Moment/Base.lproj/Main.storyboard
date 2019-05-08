@@ -118,7 +118,7 @@
             <objects>
                 <collectionViewController id="qkD-Na-STM" customClass="ThemeCollectionViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rBr-yu-LVj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ead-4l-MgK">
@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="1749.5999999999999" y="643.62818590704649"/>
         </scene>
-        <!--Download-->
+        <!--My Library-->
         <scene sceneID="2o8-P3-fNE">
             <objects>
                 <tableViewController id="WJB-xR-dnd" sceneMemberID="viewController">
@@ -225,17 +225,17 @@
                             <outlet property="delegate" destination="WJB-xR-dnd" id="B7Y-fL-r0Y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Download" id="ge4-nS-NCA"/>
+                    <navigationItem key="navigationItem" title="My Library" id="ge4-nS-NCA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMu-pC-XSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1393" y="1413"/>
         </scene>
-        <!--Download-->
+        <!--My Library-->
         <scene sceneID="s7M-Sg-wxB">
             <objects>
                 <navigationController id="Fko-tC-5Ds" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Download" id="zZL-aQ-3VA">
+                    <tabBarItem key="tabBarItem" tag="2" title="My Library" id="zZL-aQ-3VA">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-18"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sjP-9R-NSb">
@@ -443,7 +443,6 @@
                         <outlet property="tabBar" destination="Jg0-LP-krG" id="xEU-dA-qVk"/>
                         <segue destination="1ez-YR-dwI" kind="relationship" relationship="viewControllers" id="pk4-pn-NuV"/>
                         <segue destination="Fko-tC-5Ds" kind="relationship" relationship="viewControllers" id="nCZ-kX-G7e"/>
-                        <segue destination="FWb-eA-tUz" kind="relationship" relationship="viewControllers" id="VwO-WV-f9P"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gla-lF-8s9" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -28,8 +28,7 @@ class MediaPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Player.shared.playinSongName = "asd"
-        self.songNameLabel?.text = Player.shared.playinSongName
+        self.songNameLabel?.text = "Not Playing"
         
         albumImage.image = UIImage(named: "placeholder")
         print("Media player up and running")
