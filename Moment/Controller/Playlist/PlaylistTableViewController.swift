@@ -12,6 +12,8 @@ class PlaylistTableViewController: UITableViewController, UISearchBarDelegate {
     
     
     @IBOutlet var searchBar: UISearchBar!
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,14 @@ class PlaylistTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
         PlaylistNetwork().getPlaylist(term: searchBar.text!, completionHandler: {self.updateTableView()}, errorHandler:{
             error in
             
@@ -44,6 +54,7 @@ class PlaylistTableViewController: UITableViewController, UISearchBarDelegate {
             }
             
         })
+        
     }
     
     // MARK: - Table view data source
@@ -55,6 +66,8 @@ class PlaylistTableViewController: UITableViewController, UISearchBarDelegate {
     func updateTableView(){
         print("recieved new results")
         tableView.reloadData()
+        activityIndicator.stopAnimating()
+
     }
     
 

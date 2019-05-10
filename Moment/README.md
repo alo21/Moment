@@ -33,4 +33,7 @@ Moment, is at its eraly stages right now. It will be develope on time forth, sta
 + No persistence implemented (To be developed later)
 
 # Note
-This app is tested on iPhone 8 (physical device)
+
++ This app is tested on iPhone 8 (physical device)
++ Language: Swift 5
++ IDE: Xcode 10.2
