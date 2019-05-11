@@ -39,6 +39,10 @@
 		D393033B227FB48F00777A31 /* SongModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393033A227FB48F00777A31 /* SongModalViewController.swift */; };
 		D3BBC0DB2278F6FC00174454 /* RootUIviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */; };
 		D3CF449E228390320024445E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D3CF449D228390310024445E /* README.md */; };
+		D3CF44A22286EDC90024445E /* myLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3CF44A02286EDC90024445E /* myLibrary.xcdatamodeld */; };
+		D3CF44A4228718B00024445E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF44A3228718B00024445E /* DataController.swift */; };
+		D3CF44A7228729110024445E /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF44A6228729100024445E /* LibraryTableViewController.swift */; };
+		D3CF44A92287295A0024445E /* LibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF44A82287295A0024445E /* LibraryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +81,10 @@
 		D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUIviewViewController.swift; sourceTree = "<group>"; };
 		D3CF449D228390310024445E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
 		D3CF449F228390580024445E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D3CF44A12286EDC90024445E /* myLibrary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myLibrary.xcdatamodel; sourceTree = "<group>"; };
+		D3CF44A3228718B00024445E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D3CF44A6228729100024445E /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
+		D3CF44A82287295A0024445E /* LibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,7 @@
 		D378EE0A223F18CA0002DF86 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3CF44A5228728ED0024445E /* Library */,
 				D3BBC0D92278F6BB00174454 /* Root */,
 				D343CB7D227056A00049C30A /* Theme */,
 				D319E8B12252B4B5009DF7A9 /* Playlist */,
@@ -184,9 +193,11 @@
 		D38E9F2822516482005682FD /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D3CF44A02286EDC90024445E /* myLibrary.xcdatamodeld */,
 				D38E9F2A225164DD005682FD /* RadioData.swift */,
 				D319E8AE2252B392009DF7A9 /* PlaylistData.swift */,
 				D319E8BA22540BB9009DF7A9 /* PlaylistTracksData.swift */,
+				D3CF44A3228718B00024445E /* DataController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -197,6 +208,15 @@
 				D3BBC0DA2278F6FC00174454 /* RootUIviewViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		D3CF44A5228728ED0024445E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF44A6228729100024445E /* LibraryTableViewController.swift */,
+				D3CF44A82287295A0024445E /* LibraryTableViewCell.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		D3E0B851223F11C300F17031 /* Codable */ = {
@@ -288,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CF44A7228729110024445E /* LibraryTableViewController.swift in Sources */,
 				D378EE05223F13150002DF86 /* RadioNetwork.swift in Sources */,
 				D38E9F3322518555005682FD /* ImageNetwork.swift in Sources */,
 				D38E9F2F22516A17005682FD /* RadioTableViewController.swift in Sources */,
@@ -309,13 +330,16 @@
 				D343CB7F227056CB0049C30A /* ThemeCollectionViewController.swift in Sources */,
 				D3892EF022594F1400FE6128 /* MediaPlayerViewController.swift in Sources */,
 				D378EE02223F12E60002DF86 /* RadioResponse.swift in Sources */,
+				D3CF44A92287295A0024445E /* LibraryTableViewCell.swift in Sources */,
 				D37E6EE22263C5050029A298 /* Player.swift in Sources */,
 				D37E6EE42263D7700029A298 /* ThemeNetwork.swift in Sources */,
 				D319E8B922540959009DF7A9 /* PlaylistTracksResponse.swift in Sources */,
 				D319E8B722540866009DF7A9 /* PlaylistTracksNetwork.swift in Sources */,
+				D3CF44A4228718B00024445E /* DataController.swift in Sources */,
 				D35366F6223F10550062736A /* AppDelegate.swift in Sources */,
 				D319E8B32252B7F1009DF7A9 /* PlaylistTableViewController.swift in Sources */,
 				D319E8BB22540BB9009DF7A9 /* PlaylistTracksData.swift in Sources */,
+				D3CF44A22286EDC90024445E /* myLibrary.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +539,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D3CF44A02286EDC90024445E /* myLibrary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3CF44A12286EDC90024445E /* myLibrary.xcdatamodel */,
+			);
+			currentVersion = D3CF44A12286EDC90024445E /* myLibrary.xcdatamodel */;
+			path = myLibrary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D35366EA223F10550062736A /* Project object */;
 }

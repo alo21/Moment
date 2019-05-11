@@ -169,6 +169,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -205,19 +206,41 @@
         <!--My Library-->
         <scene sceneID="2o8-P3-fNE">
             <objects>
-                <tableViewController id="WJB-xR-dnd" sceneMemberID="viewController">
+                <tableViewController id="WJB-xR-dnd" customClass="LibraryTableViewController" customModule="Moment" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sYc-xa-ZRB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hrr-ct-epV">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="libraryTrackCell" rowHeight="72" id="hrr-ct-epV" customClass="LibraryTableViewCell" customModule="Moment" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrr-ct-epV" id="eIg-xw-zwD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-yz-7l7">
+                                            <rect key="frame" x="16" y="25" width="279" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnV-wx-Dzu">
+                                            <rect key="frame" x="303" y="0.0" width="72" height="72"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.27457522443399918" blue="0.22618978655301647" alpha="0.60791703345070425" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Remove"/>
+                                            <connections>
+                                                <action selector="onDelete:" destination="hrr-ct-epV" eventType="touchUpInside" id="ZYI-zn-3st"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myButton" destination="BnV-wx-Dzu" id="ctr-v0-AGk"/>
+                                    <outlet property="myLabel" destination="jCb-yz-7l7" id="5b8-20-tav"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -229,7 +252,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMu-pC-XSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="1413"/>
+            <point key="canvasLocation" x="1392.8" y="1412.7436281859073"/>
         </scene>
         <!--My Library-->
         <scene sceneID="s7M-Sg-wxB">
@@ -272,19 +295,24 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEI-Cr-lb8" userLabel="DownloadImage">
-                                            <rect key="frame" x="311" y="5" width="48" height="56"/>
-                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gm-uc-JOH">
+                                            <rect key="frame" x="276" y="0.0" width="99" height="67"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Add"/>
+                                            <connections>
+                                                <action selector="addToLibrary:" destination="yRg-zo-18H" eventType="touchUpInside" id="uT8-YV-Dqc"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="w6n-KL-hNp" firstAttribute="centerY" secondItem="f3T-Yk-4Gj" secondAttribute="centerY" id="QsZ-BX-Jvj"/>
-                                        <constraint firstItem="cEI-Cr-lb8" firstAttribute="centerY" secondItem="f3T-Yk-4Gj" secondAttribute="centerY" id="by0-0o-oC6"/>
-                                        <constraint firstAttribute="trailing" secondItem="cEI-Cr-lb8" secondAttribute="trailing" constant="5" id="m5S-c4-KX1"/>
                                         <constraint firstItem="w6n-KL-hNp" firstAttribute="leading" secondItem="f3T-Yk-4Gj" secondAttribute="leading" constant="5" id="t07-hb-ABp"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <outlet property="downloadImage" destination="cEI-Cr-lb8" id="zvv-iw-JE1"/>
+                                    <outlet property="addButton" destination="1gm-uc-JOH" id="eUf-sK-HWf"/>
                                     <outlet property="myLabel" destination="w6n-KL-hNp" id="dD5-qK-IM8"/>
                                 </connections>
                             </tableViewCell>
@@ -294,6 +322,8 @@
                             <outlet property="delegate" destination="MCp-zT-eb9" id="MU9-a8-Syo"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="lAJ-qz-j9I" id="qc3-dV-Hch"/>
                     </connections>

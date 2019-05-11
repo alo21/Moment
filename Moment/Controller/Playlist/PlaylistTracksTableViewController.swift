@@ -9,12 +9,13 @@
 import UIKit
 
 
-class PlaylistTracksTableViewController: UITableViewController {
-    
+class PlaylistTracksTableViewController: UITableViewController{
+
 
     var playlist: playlist!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,11 +26,17 @@ class PlaylistTracksTableViewController: UITableViewController {
             }
             
         })
+    }
+    
+
+    
+    @IBAction func addToLibrary(_ sender: UIButton) {
         
+        print(sender)
         
     }
-
-
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -41,14 +48,17 @@ class PlaylistTracksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PlaylistTracksData().getPlaylistsTracks().count
     }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print("Detail disclouser")
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistTrackCell", for: indexPath)
-        let playlist = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistTrackCell", for: indexPath) as! PlaylistTracksTableViewCell
+        let track = PlaylistTracksData().getPlaylistsTracks()[(indexPath as NSIndexPath).row]
         
-        cell.textLabel?.text = playlist.name
-        cell.imageView?.image = UIImage(named: "Download")
+        cell.setSong(track: track)
         
         //cell.imageView?.image = meme.finalImage
         
