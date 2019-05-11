@@ -14,6 +14,8 @@ class PlaylistTracksTableViewController: UITableViewController{
 
     var playlist: playlist!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    let dataController = (UIApplication.shared.delegate as! AppDelegate).dataController
+
 
     
     override func viewDidLoad() {
@@ -64,6 +66,59 @@ class PlaylistTracksTableViewController: UITableViewController{
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let add = addAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [add])
+    }
+    
+    func addAction(at: IndexPath) -> UIContextualAction{
+        
+        let action = UIContextualAction(style: .normal, title: "Add") {action, view, completion in
+            
+            print("Add to playlist")
+            
+             let unw_track = PlaylistTracksData().getPlaylistsTracks()[(at as NSIndexPath).row]
+                
+                
+                
+            let artistToAdd = Artist(context: self.dataController.viewContext)
+            let albumToAdd = Album(context: self.dataController.viewContext)
+            let trackToAdd = Track(context: self.dataController.viewContext)
+                
+                artistToAdd.id = unw_track.artist_id
+                artistToAdd.album_id = unw_track.album_id
+                artistToAdd.name = unw_track.artist_name
+                
+                albumToAdd.id = unw_track.album_id
+                albumToAdd.image = unw_track.album_image
+                albumToAdd.artist = artistToAdd
+                
+                trackToAdd.album = albumToAdd
+                trackToAdd.album_id = albumToAdd.id
+                trackToAdd.id = unw_track.id
+                trackToAdd.artist_id = artistToAdd.id
+                trackToAdd.audio = unw_track.audio
+                trackToAdd.name = unw_track.name
+                trackToAdd.duration = unw_track.duration
+                
+                
+            try? self.dataController.viewContext.save()
+                print("Added to library")
+                
+            
+    
+            completion(true)
+            
+        }
+        
+        action.backgroundColor = .blue
+        return action
+        
+        
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -123,7 +178,6 @@ class PlaylistTracksTableViewController: UITableViewController{
             alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
         
     }
     

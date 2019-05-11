@@ -226,19 +226,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnV-wx-Dzu">
-                                            <rect key="frame" x="303" y="0.0" width="72" height="72"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="0.27457522443399918" blue="0.22618978655301647" alpha="0.60791703345070425" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Remove"/>
-                                            <connections>
-                                                <action selector="onDelete:" destination="hrr-ct-epV" eventType="touchUpInside" id="ZYI-zn-3st"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="myButton" destination="BnV-wx-Dzu" id="ctr-v0-AGk"/>
                                     <outlet property="myLabel" destination="jCb-yz-7l7" id="5b8-20-tav"/>
                                 </connections>
                             </tableViewCell>
@@ -295,15 +285,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gm-uc-JOH">
-                                            <rect key="frame" x="276" y="0.0" width="99" height="67"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Add"/>
-                                            <connections>
-                                                <action selector="addToLibrary:" destination="yRg-zo-18H" eventType="touchUpInside" id="uT8-YV-Dqc"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="w6n-KL-hNp" firstAttribute="centerY" secondItem="f3T-Yk-4Gj" secondAttribute="centerY" id="QsZ-BX-Jvj"/>
@@ -312,7 +293,6 @@
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outlet property="addButton" destination="1gm-uc-JOH" id="eUf-sK-HWf"/>
                                     <outlet property="myLabel" destination="w6n-KL-hNp" id="dD5-qK-IM8"/>
                                 </connections>
                             </tableViewCell>

@@ -11,20 +11,12 @@ import UIKit
 class LibraryTableViewCell: UITableViewCell {
     
     @IBOutlet var myLabel: UILabel!
-    @IBOutlet var myButton: UIButton!
+    var track: Track?
     
     
     func setSong(song: Track){
         myLabel.text = song.name
+        self.track = song
     }
-    
-    
-    @IBAction func onDelete(_ sender: Any) {
-        
-        print("Song deleted")
-        
-    }
-    
-    
     
 }
