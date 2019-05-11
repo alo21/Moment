@@ -28,13 +28,13 @@ class SongModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         FloatTotalTime = Float(totalTimePassed)
         progressBar.setProgress(0, animated: false)
         albumImage.image = albumImagePassed.image
         songName.text = songNamePassed.text
-        currentTime.text = String(Int(Player.shared.AudioPlayer.currentTime))
         gestureRec.direction = .down
+        currentTime?.text = String(Int(Player.shared.AudioPlayer.currentTime))
         totalTime.text = totalTimePassed
         startTimer()
 
@@ -48,7 +48,7 @@ class SongModalViewController: UIViewController {
     
     @objc func timerUpdate(){
         
-        currentTime.text = String(Int(Player.shared.AudioPlayer.currentTime))
+        currentTime?.text = String(Int(Player.shared.AudioPlayer.currentTime))
         progressBar.setProgress((Float(Player.shared.AudioPlayer.currentTime)/FloatTotalTime), animated: true)
     }
     

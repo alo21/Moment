@@ -22,16 +22,21 @@ class MediaPlayerViewController: UIViewController {
     @IBOutlet var songNameLabel: UILabel?
     @IBOutlet var albumImage: UIImageView!
     var totalTime:String!
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     
-    let songSelecred = Notification.Name(rawValue: songSelectedKey)
+    
+    let songSelected = Notification.Name(rawValue: songSelectedKey)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.songNameLabel?.text = "Not Playing"
-        
+        self.totalTime = "0"
         albumImage.image = UIImage(named: "placeholder")
         print("Media player up and running")
+        
+        tapGesture.isEnabled = false
+        playButton.isEnabled = false
         
         createObserver()
         
@@ -40,7 +45,7 @@ class MediaPlayerViewController: UIViewController {
     
     
     func createObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(self.OnSongSelected), name: songSelecred, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.OnSongSelected), name: songSelected, object: nil)
         
     }
     
@@ -54,7 +59,11 @@ class MediaPlayerViewController: UIViewController {
         playTrack(filePath: song["songURL"]! as! URL)
         DispatchQueue.main.async {
             self.albumImage.image =  UIImage(data:song["songImage"]! as! Data,scale:1.0)
+            self.playButton.isEnabled = true
         }
+        
+        tapGesture.isEnabled = true
+        
 
     }
     
